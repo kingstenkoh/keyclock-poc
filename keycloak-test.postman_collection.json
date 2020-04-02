@@ -1,0 +1,408 @@
+{
+	"info": {
+		"_postman_id": "767458da-af69-4515-bd5b-58904f946f0b",
+		"name": "keycloak-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "direct-grant",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c922f716-d73e-4b18-9640-0af3d0cc0a05",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"setAnonClaimsToken\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    postman.setEnvironmentVariable(\"access-token\", jsonData.access_token);",
+							"    console.log(jsonData.access_token.value);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{clientpassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{clientid}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "grant_type=password&username=kingsten&password=password"
+				},
+				"url": {
+					"raw": "http://localhost:8180/auth/realms/app-authz-rest-springboot/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"auth",
+						"realms",
+						"app-authz-rest-springboot",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pre-login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c922f716-d73e-4b18-9640-0af3d0cc0a05",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"setAnonClaimsToken\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    postman.setEnvironmentVariable(\"access-token\", jsonData.access_token);",
+							"    console.log(jsonData.access_token.value);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{pre-login-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{pre-login-client}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "grant_type=password&username=public&password=password"
+				},
+				"url": {
+					"raw": "http://localhost:8180/auth/realms/app-authz-rest-springboot/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"auth",
+						"realms",
+						"app-authz-rest-springboot",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quick-login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c922f716-d73e-4b18-9640-0af3d0cc0a05",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"setAnonClaimsToken\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    postman.setEnvironmentVariable(\"access-token\", jsonData.access_token);",
+							"    console.log(jsonData.access_token.value);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{quick-login-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{quick-login-client}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "grant_type=password&username=kingsten&password=password"
+				},
+				"url": {
+					"raw": "http://localhost:8180/auth/realms/app-authz-rest-springboot/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"auth",
+						"realms",
+						"app-authz-rest-springboot",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "full-login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c922f716-d73e-4b18-9640-0af3d0cc0a05",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"pm.test(\"setAnonClaimsToken\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    postman.setEnvironmentVariable(\"access-token\", jsonData.access_token);",
+							"    console.log(jsonData.access_token.value);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{full-login-password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{full-login-client}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "grant_type=password&username=kingsten&password=password"
+				},
+				"url": {
+					"raw": "http://localhost:8180/auth/realms/app-authz-rest-springboot/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8180",
+					"path": [
+						"auth",
+						"realms",
+						"app-authz-rest-springboot",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-resourceb",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access-token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8762/api/v1/resourceb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"v1",
+						"resourceb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-premium",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access-token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8762/api/premium",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"premium"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-pre-login-resource",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access-token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8762/api/pre-login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"pre-login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-quick-login-resource",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access-token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8762/api/quick-login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"quick-login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-full-login-resource",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access-token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8762/api/full-login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"full-login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

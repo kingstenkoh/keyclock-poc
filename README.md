@@ -27,10 +27,10 @@ This is the POC building keycloak authorization with spring eureka, zuul.
 - Follow the previous step to regenerate the secret for pre-login, quick-login-client and full-login-client, copy out the secret key and save it into notepad for later use.
 - Create following user for testing
 
-| username  | Role |
-| ------------- | ------------- |
-| kingsten  | public, user  |
-| public  | public  |
+| username  | Role | credentials |
+| ------------- | ------------- | ------------- |
+| kingsten  | public, user  | password | 
+| public  | public  | password |
 
 ***Start your Eureka Server***
 

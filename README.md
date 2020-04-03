@@ -25,7 +25,7 @@ This is the POC building keycloak authorization with spring eureka, zuul.
 - Once realm created, select the select app-authz-rest-springboot realm from top left corner (the dropdown below keycloak logo)
 - Click clients, click “app-authz-rest-springboot”->”Credentials”-> Regenerate secret, copy the secret into and change the keycloak.credentials.secret properties in zuul-server/src/main/resources/application.properties
 - Follow the previous step to regenerate the secret for pre-login, quick-login-client and full-login-client, copy out the secret key and save it into notepad for later use.
-- Create following user for testing
+- Create following user for testing, remember to untick "Temporary" button when setting up credentials
 
 | username  | Role | credentials |
 | ------------- | ------------- | ------------- |

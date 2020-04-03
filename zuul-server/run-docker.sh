@@ -1,0 +1,1 @@
+sudo docker run -p 8762:8762 --net=host -e hostName=$HOSTNAME -e eureka.client.serviceUrl.defaultZone="http://$HOSTNAME:8761/eureka" -e keycloak.credentials.secret=eb9fcc7d-27d2-4410-b191-f8fcb9e7ff0c zuul-server:v1
